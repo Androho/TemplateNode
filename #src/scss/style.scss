@@ -1,0 +1,35 @@
+@import "normalize";
+@import "mixins";
+@import "fonts";
+// -----  variables -----//
+$buttonColor: #A68E52;
+$minWidth: 320;
+$maxWidth: 1460;
+$maxWidthContainer: 1440;
+// -----  main grid -----//
+._container {
+  display: flex;
+  flex-direction: column;
+  width: $maxWidthContainer + px;
+  margin: 0 auto;
+  padding: 0px;
+  background: #FFFFFF;
+  @media (min-width: 768px) and (max-width: 1439px) {
+    width: 768px;
+  }
+}
+
+// -----  project style -----//
+// -----  slick slider -----//
+@import "_slick";
+// -----  navbar -----//
+@import "_nav";
+// -----  header -----//
+@import "_header";
+// -----  main -----//
+@import "_main";
+// -----  footer -----//
+@import "_footer";
+// -----  modal -----//
+@import "_modal";
+

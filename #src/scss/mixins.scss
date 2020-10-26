@@ -1,0 +1,25 @@
+// from convert fonts
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+// from responsive text size
+// to enable adaptive fonts, call adaptive-font ($ pcSize, $ mobSize).
+// change the value of a variable $maxWidth: 1280; according to project conditions
+// example:
+// h1 {
+//     font-weight: 900;
+//     @include adaptive-font (40,20);
+//    }
+$maxWidth: 1280;
+@mixin adaptive-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+// end of responsive text size
